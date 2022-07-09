@@ -10,7 +10,7 @@ public class ClassPanel extends JPanel {
 	 */
 	public ClassPanel() {
 		setBounds(0, 0, 985, 609);
-		setBackground(Color.red);
+		
 	}
 
 }

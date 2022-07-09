@@ -10,7 +10,7 @@ public class SettingsPanel extends JPanel {
 	 */
 	public SettingsPanel() {
 		setBounds(0, 0, 985, 609);
-		setBackground(Color.orange);
+		
 	}
 
 }

@@ -10,7 +10,7 @@ public class TeacherPanel extends JPanel {
 	 */
 	public TeacherPanel() {
 		setBounds(0, 0, 985, 609);
-		setBackground(Color.pink);
+		
 	}
 
 }

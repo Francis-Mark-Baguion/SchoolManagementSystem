@@ -48,7 +48,7 @@ public class StudentsPanel extends JPanel implements ActionListener {
 		table.setBackground(Color.white);
 		table.setForeground(Color.black);
 		table.setSelectionBackground(Color.red);
-		table.setGridColor(Color.red);
+		table.setGridColor(Color.black);
 		table.setSelectionForeground(Color.white);
 		table.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		table.setRowHeight(30);
