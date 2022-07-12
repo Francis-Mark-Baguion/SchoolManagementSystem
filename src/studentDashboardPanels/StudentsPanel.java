@@ -35,7 +35,7 @@ public class StudentsPanel extends JPanel implements ActionListener {
 	String [] columnName = {"Id","Name"};
 	
 	public StudentsPanel() {
-		row = new Object[3];
+		row = new Object[4];
 		setLayout(null);
 		setBounds(0, 0, 985, 609);
 		setBackground(Color.green);
@@ -61,7 +61,7 @@ public class StudentsPanel extends JPanel implements ActionListener {
 		
 	}
 	
-	public void display() {
+	private void display() {
 		model.setRowCount(0);
 		try {
 						System.out.println("hello");
@@ -84,6 +84,7 @@ public class StudentsPanel extends JPanel implements ActionListener {
 							row[0] = rs.getString(1);
 							row[1] = rs.getString(2);
 							row[2] = rs.getString(3);
+							row[3] = rs.getString(4);
 							
 							model.addRow(row);
 						}
