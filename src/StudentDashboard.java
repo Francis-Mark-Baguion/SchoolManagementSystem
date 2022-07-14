@@ -3,6 +3,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -250,6 +251,10 @@ public class StudentDashboard extends JFrame implements ActionListener{
 		@Override
 		public void mouseReleased(MouseEvent e) {
 			panel.setBackground(SystemColor.controlHighlight);
+		}
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			panel.setBackground(Color.white);
 		}
 	}
 	private class PaneButtonMouseAdapter1 extends MouseAdapter{
