@@ -24,9 +24,9 @@ import javax.swing.JTextField;
 public class StudentAccount extends JFrame implements ActionListener {
 	ImageIcon image = new ImageIcon("/StudentManagement/src/SPACERENT logo.png");
 	JLabel title;
-	JPanel username, password,top,mid,low, motherPanel,Classes;
+	JPanel username, password,top,mid,low, motherPanel;
 	JButton signIn, createAccount, exit;
-	JTextField usernameField,classField;
+	JTextField usernameField;
 	JPasswordField passwordField;
 	
 	public StudentAccount(){
@@ -59,18 +59,6 @@ public class StudentAccount extends JFrame implements ActionListener {
 		passwordField.setBorder(null);
 		passwordField.setBackground(new Color(211,211,211));
 		
-		classField = new JTextField();
-		classField.setBounds(231,190, 150, 30);
-		classField.setBorder(null);
-		classField.setBackground(new Color(211,211,211));
-		
-		JLabel ClassesLabel = new JLabel("Classes");
-		ClassesLabel.setForeground(Color.white);
-		Classes = new JPanel();
-		Classes.setBounds(380, 190, 100, 30);
-		Classes.setBackground(Color.black);
-		Classes.add(ClassesLabel);
-		
 		
 		JLabel passwordLabel = new JLabel("Password");
 		passwordLabel.setForeground(Color.white);
@@ -80,7 +68,7 @@ public class StudentAccount extends JFrame implements ActionListener {
 		password.add(passwordLabel);
 		
 		signIn = new JButton(" Sign In");
-		signIn.setBounds(310, 10, 80, 30);
+		signIn.setBounds(310, 190, 80, 30);
 		signIn.setFocusable(false);
 		signIn.setBorder(null);
 		signIn.setBackground(Color.green);
@@ -112,15 +100,14 @@ public class StudentAccount extends JFrame implements ActionListener {
 		mid.add(password);
 		mid.add(usernameField);
 		mid.add(passwordField);
-		mid.add(classField);
-		mid.add(Classes);
+		mid.add(signIn);
 		
 		low = new JPanel();
 		low.setBounds(0, 300, 700, 200);
 		low.setLayout(null);
 		low.setOpaque(false);
 		low.add(exit);
-		low.add(signIn);
+		
 		
 		
 		
@@ -165,12 +152,12 @@ public class StudentAccount extends JFrame implements ActionListener {
 					Class.forName(DRIVER);
 					Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 					
-					PreparedStatement ps = con.prepareStatement("insert into student_login values(?,?,?,?)");
+					PreparedStatement ps = con.prepareStatement("insert into student_login values(?,?,?)");
 					ps.setInt(1, 0);
 					ps.setString(2,usernameField.getText());  
 					  
 					ps.setString(3, passwordField.getText());  
-					ps.setString(4,classField.getText());
+					
 					int i=ps.executeUpdate();  
 					System.out.println(i+" records affected");
 					
