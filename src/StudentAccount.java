@@ -1,5 +1,6 @@
 
 import java.awt.BorderLayout;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Insets;
@@ -28,6 +29,7 @@ public class StudentAccount extends JFrame implements ActionListener {
 	JButton signIn, createAccount, exit;
 	JTextField usernameField;
 	JPasswordField passwordField;
+	studentnfo info;
 	
 	public StudentAccount(){
 		title = new JLabel("Registration Form");
@@ -108,9 +110,13 @@ public class StudentAccount extends JFrame implements ActionListener {
 		low.setOpaque(false);
 		low.add(exit);
 		
+		info = new studentnfo();
+		info.setBounds(0, 0, 700, 500);
+		info.setVisible(false);
 		
 		
 		
+		this.add(info);
 		this.add(top);
 		this.add(mid);
 		this.add(low);
@@ -164,7 +170,8 @@ public class StudentAccount extends JFrame implements ActionListener {
 					
 					con.close();  
 					JOptionPane.showMessageDialog(null, "Account Created");
-					this.dispose();
+					info.setVisible(true);
+					
 					
 				} catch (Exception e2) {
 					// TODO: handle exception

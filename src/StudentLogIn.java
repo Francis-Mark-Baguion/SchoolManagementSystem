@@ -178,7 +178,7 @@ public class StudentLogIn extends JFrame implements ActionListener{
 			this.dispose();
 		}
 		if(e.getSource()==createAccount) {
-			StudentAccount create = new StudentAccount();
+			StudentRegistration registration = new StudentRegistration();
 		}
 	}
 }
