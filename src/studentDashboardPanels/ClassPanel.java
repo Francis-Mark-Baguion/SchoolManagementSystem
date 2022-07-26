@@ -22,7 +22,7 @@ public class ClassPanel extends JPanel {
 	
 	
 	public ClassPanel() {
-		row = new Object[3];
+		row = new Object[7];
 		setLayout(null);
 		setBounds(0, 0, 985, 609);
 		
@@ -52,7 +52,7 @@ public class ClassPanel extends JPanel {
 			
 			Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 			Statement stmt = con.createStatement();
-			String query = "select * from student_login";
+			String query = "select * from student_info";
 			ResultSet rs = stmt.executeQuery(query);
 			ResultSetMetaData rmsd  = rs.getMetaData();
 			
@@ -67,6 +67,10 @@ public class ClassPanel extends JPanel {
 				row[0] = rs.getString(1);
 				row[1] = rs.getString(2);
 				row[2] = rs.getString(3);
+				row[3] = rs.getString(4);
+				row[4] = rs.getString(5);
+				row[5] = rs.getString(6);
+				row[6] = rs.getString(7);
 				
 				model.addRow(row);
 			}
