@@ -176,6 +176,7 @@ public class TeacherLogIn extends JFrame implements ActionListener {
 		
 		if(e.getSource()==exit) {
 			this.dispose();
+			HomeFrame home = new HomeFrame();
 		}
 		if(e.getSource()==createAccount) {
 			AdminAccount accountCreation = new AdminAccount();

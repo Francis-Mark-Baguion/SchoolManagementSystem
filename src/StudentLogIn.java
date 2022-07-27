@@ -176,8 +176,10 @@ public class StudentLogIn extends JFrame implements ActionListener{
 		}
 		if(e.getSource()==exit) {
 			this.dispose();
+			HomeFrame home = new HomeFrame();
 		}
 		if(e.getSource()==createAccount) {
+			this.dispose();
 			StudentRegistration registration = new StudentRegistration();
 		}
 	}

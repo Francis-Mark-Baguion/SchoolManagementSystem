@@ -53,7 +53,7 @@ public class HomeFrame extends JFrame implements ActionListener{
 		this.add(top);
 		this.add(mid);  
 		
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setSize(700, 500);
 		this.setTitle("Student Management System");
 		this.setLocationRelativeTo(null);
@@ -67,11 +67,13 @@ public class HomeFrame extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==Student) {
 			StudentLogIn student = new StudentLogIn();
+			this.dispose();
 			
 			
 		}
 		if(e.getSource()==Teacher) {
 			TeacherLogIn teacher = new TeacherLogIn();
+			this.dispose();
 		}
 	}
 }
