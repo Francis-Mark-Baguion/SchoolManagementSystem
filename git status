@@ -1,0 +1,68 @@
+[33mcommit 7a8f6d3c1adab4c929d5b758e23989dcce294e5b[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: fmbags <baguion445@gmail.com>
+Date:   Fri Jul 15 21:34:12 2022 +0800
+
+    Registration Revamp
+
+[1mdiff --git a/bin/StudentAccount.class b/bin/StudentAccount.class[m
+[1mindex 6f42666..500ece2 100644[m
+Binary files a/bin/StudentAccount.class and b/bin/StudentAccount.class differ
+[1mdiff --git a/bin/StudentLogIn.class b/bin/StudentLogIn.class[m
+[1mindex 13d4161..8b93c2d 100644[m
+Binary files a/bin/StudentLogIn.class and b/bin/StudentLogIn.class differ
+[1mdiff --git a/src/StudentAccount.java b/src/StudentAccount.java[m
+[1mindex 3428b4c..5287ca2 100644[m
+[1m--- a/src/StudentAccount.java[m
+[1m+++ b/src/StudentAccount.java[m
+[36m@@ -1,5 +1,6 @@[m
+ [m
+ import java.awt.BorderLayout;[m
+[32m+[m
+ import java.awt.Color;[m
+ import java.awt.Font;[m
+ import java.awt.Insets;[m
+[36m@@ -28,6 +29,7 @@[m [mpublic class StudentAccount extends JFrame implements ActionListener {[m
+ 	JButton signIn, createAccount, exit;[m
+ 	JTextField usernameField;[m
+ 	JPasswordField passwordField;[m
+[32m+[m	[32mstudentnfo info;[m
+ 	[m
+ 	public StudentAccount(){[m
+ 		title = new JLabel("Registration Form");[m
+[36m@@ -108,9 +110,13 @@[m [mpublic class StudentAccount extends JFrame implements ActionListener {[m
+ 		low.setOpaque(false);[m
+ 		low.add(exit);[m
+ 		[m
+[32m+[m		[32minfo = new studentnfo();[m
+[32m+[m		[32minfo.setBounds(0, 0, 700, 500);[m
+[32m+[m		[32minfo.setVisible(false);[m
+ 		[m
+ 		[m
+ 		[m
+[32m+[m		[32mthis.add(info);[m
+ 		this.add(top);[m
+ 		this.add(mid);[m
+ 		this.add(low);[m
+[36m@@ -164,7 +170,8 @@[m [mpublic class StudentAccount extends JFrame implements ActionListener {[m
+ 					[m
+ 					con.close();  [m
+ 					JOptionPane.showMessageDialog(null, "Account Created");[m
+[31m-					this.dispose();[m
+[32m+[m					[32minfo.setVisible(true);[m
+[32m+[m[41m					[m
+ 					[m
+ 				} catch (Exception e2) {[m
+ 					// TODO: handle exception[m
+[1mdiff --git a/src/StudentLogIn.java b/src/StudentLogIn.java[m
+[1mindex 4e7340b..e5732e3 100644[m
+[1m--- a/src/StudentLogIn.java[m
+[1m+++ b/src/StudentLogIn.java[m
+[36m@@ -178,7 +178,7 @@[m [mpublic class StudentLogIn extends JFrame implements ActionListener{[m
+ 			this.dispose();[m
+ 		}[m
+ 		if(e.getSource()==createAccount) {[m
+[31m-			StudentAccount create = new StudentAccount();[m
+[32m+[m			[32mStudentRegistration registration = new StudentRegistration();[m
+ 		}[m
+ 	}[m
+ }[m
