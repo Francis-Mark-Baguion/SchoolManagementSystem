@@ -275,6 +275,7 @@ public class StudentDashboard extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==btnNewButton) {
+			StudentLogIn login = new StudentLogIn();
 			this.dispose();
 		}
 	}

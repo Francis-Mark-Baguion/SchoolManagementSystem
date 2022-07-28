@@ -162,6 +162,7 @@ public class StudentLogIn extends JFrame implements ActionListener{
 					System.out.println("username: "+ rs.getString("username")+ "\npassword: "+ rs.getString("password"));
 					StudentDashboard dashboard = new StudentDashboard();
 					dashboard.main(null);
+					this.dispose();
 				}
 				else {
 					JOptionPane.showMessageDialog(null, "Failed to Log in");
