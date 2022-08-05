@@ -84,4 +84,6 @@ public class PersonalInfo extends JPanel {
 		genderPanel.add(genderLabel);
 		
 	}
+	
+	
 }

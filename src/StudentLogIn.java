@@ -22,10 +22,11 @@ import javax.swing.JTextField;
 public class StudentLogIn extends JFrame implements ActionListener{
 
 	ImageIcon image = new ImageIcon("/StudentManagement/src/SPACERENT logo.png");
+	credentials Credentials = new credentials();
 	JLabel title;
-	JPanel username, password,top,mid,low, motherPanel;
+	JPanel username, password,top,mid,low, motherPanel,idPanel;
 	JButton logIn, createAccount, exit;
-	JTextField usernameField;
+	JTextField usernameField,idField;
 	JPasswordField passwordField;
 	
 	static final String DRIVER = "com.mysql.jdbc.Driver" ;
@@ -71,8 +72,20 @@ public class StudentLogIn extends JFrame implements ActionListener{
 		password.setBackground(Color.black);
 		password.add(passwordLabel);
 		
+		idField = new JPasswordField();
+		idField.setBounds(231,190, 150, 30);
+		idField.setBorder(null);
+		idField.setBackground(new Color(211,211,211));
+		
+		JLabel idLabel = new JLabel("ID");
+		idLabel.setForeground(Color.white);
+		idPanel = new JPanel();
+		idPanel.setBounds(380, 190, 100, 30);
+		idPanel.setBackground(Color.black);
+		idPanel.add(idLabel);
+		
 		logIn = new JButton("Log In");
-		logIn.setBounds(310, 200, 80, 30);
+		logIn.setBounds(310, 10, 80, 30);
 		logIn.setFocusable(false);
 		logIn.setBorder(null);
 		logIn.setBackground(Color.green);
@@ -111,7 +124,8 @@ public class StudentLogIn extends JFrame implements ActionListener{
 		mid.add(password);
 		mid.add(usernameField);
 		mid.add(passwordField);
-		mid.add(logIn);
+		mid.add(idField);
+		mid.add(idPanel);
 		
 		low = new JPanel();
 		low.setBounds(0, 300, 700, 200);
@@ -119,6 +133,7 @@ public class StudentLogIn extends JFrame implements ActionListener{
 		low.setOpaque(false);
 		low.add(createAccount);
 		low.add(exit);
+		low.add(logIn);
 		
 		
 		
@@ -160,6 +175,7 @@ public class StudentLogIn extends JFrame implements ActionListener{
 				if(rs.next()) {
 					JOptionPane.showMessageDialog(null, "Log in Successful");
 					System.out.println("username: "+ rs.getString("username")+ "\npassword: "+ rs.getString("password"));
+					Credentials.setid(Integer.parseInt(idField.getText()));
 					StudentDashboard dashboard = new StudentDashboard();
 					dashboard.main(null);
 					this.dispose();
