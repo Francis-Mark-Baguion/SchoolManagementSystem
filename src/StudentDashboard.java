@@ -1,5 +1,6 @@
 
 import java.awt.BorderLayout;
+
 import java.awt.Dimension;
 import java.awt.EventQueue;
 
@@ -13,6 +14,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.border.LineBorder;
 
+import functions.dataRetrieve;
 import studentDashboardPanels.ClassPanel;
 import studentDashboardPanels.StudentsPanel;
 import studentDashboardPanels.PersonalInfo;
@@ -33,6 +35,7 @@ import javax.swing.JTextField;
 public class StudentDashboard extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
+	
 
 	/**
 	 * Launch the application.
@@ -56,6 +59,7 @@ public class StudentDashboard extends JFrame implements ActionListener{
 	 */
 	JButton btnNewButton;
 	public StudentDashboard() {
+		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setIconImage(new ImageIcon(getClass().getResource("studentLogo.png")).getImage());
 		this.setSize(1200, 700);

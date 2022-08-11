@@ -2,19 +2,23 @@ package studentDashboardPanels;
 import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.JTextField;
+
+import functions.dataRetrieve;
+
 import javax.swing.JLabel;
 
 public class PersonalInfo extends JPanel {
+	
+	String name;
 
-	/**
-	 * Create the panel.
-	 */
+	dataRetrieve data;
+	credentials userinfo = new credentials();
 	
 	public PersonalInfo() {
+		
+		data = new dataRetrieve(userinfo.getid());
+		
 		setBackground(Color.WHITE);
-		
-		
-		
 		
 		setBounds(0, 0, 985, 609);
 		setLayout(null);
@@ -30,7 +34,7 @@ public class PersonalInfo extends JPanel {
 		add(namePanel);
 		namePanel.setLayout(null);
 		
-		JLabel nameLabel = new JLabel("");
+		JLabel nameLabel = new JLabel();
 		nameLabel.setBounds(10, 0, 142, 31);
 		namePanel.add(nameLabel);
 		
@@ -39,11 +43,11 @@ public class PersonalInfo extends JPanel {
 		classPanel.setBounds(29, 221, 162, 31);
 		add(classPanel);
 		
-		JLabel classLabel = new JLabel("");
+		JLabel classLabel = new JLabel(data.getClasses());
 		classLabel.setBounds(10, 0, 142, 31);
 		classPanel.add(classLabel);
 		
-		JLabel nameLabel_2 = new JLabel("");
+		JLabel nameLabel_2 = new JLabel();
 		nameLabel_2.setBounds(10, 0, 142, 31);
 		classPanel.add(nameLabel_2);
 		
@@ -52,7 +56,7 @@ public class PersonalInfo extends JPanel {
 		coursePabel.setBounds(29, 263, 162, 31);
 		add(coursePabel);
 		
-		JLabel courseLabel = new JLabel("");
+		JLabel courseLabel = new JLabel(data.getCourse());
 		courseLabel.setBounds(10, 0, 142, 31);
 		coursePabel.add(courseLabel);
 		
@@ -79,7 +83,7 @@ public class PersonalInfo extends JPanel {
 		genderPanel.setBounds(29, 387, 162, 31);
 		add(genderPanel);
 		
-		JLabel genderLabel = new JLabel("");
+		JLabel genderLabel = new JLabel(data.getGender());
 		genderLabel.setBounds(10, 0, 142, 31);
 		genderPanel.add(genderLabel);
 		

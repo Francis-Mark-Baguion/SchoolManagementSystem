@@ -19,6 +19,8 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import studentDashboardPanels.credentials;
+
 public class StudentLogIn extends JFrame implements ActionListener{
 
 	ImageIcon image = new ImageIcon("/StudentManagement/src/SPACERENT logo.png");
@@ -159,6 +161,7 @@ public class StudentLogIn extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==logIn) {
+			Credentials.setid(Integer.parseInt(idField.getText()));
 			try {
 				//get connection to data base
 				Class.forName(DRIVER);
@@ -174,8 +177,8 @@ public class StudentLogIn extends JFrame implements ActionListener{
 				ResultSet rs = stmt.executeQuery(sql);
 				if(rs.next()) {
 					JOptionPane.showMessageDialog(null, "Log in Successful");
-					System.out.println("username: "+ rs.getString("username")+ "\npassword: "+ rs.getString("password"));
-					Credentials.setid(Integer.parseInt(idField.getText()));
+					System.out.println("username: "+ rs.getString("username")+ "\npassword: "+ rs.getString("password")+ idField.getText());
+					
 					StudentDashboard dashboard = new StudentDashboard();
 					dashboard.main(null);
 					this.dispose();
