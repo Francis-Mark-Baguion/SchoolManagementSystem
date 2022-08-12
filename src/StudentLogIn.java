@@ -1,5 +1,6 @@
 
 import java.awt.BorderLayout;
+
 import java.sql.*;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -19,12 +20,9 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import studentDashboardPanels.credentials;
-
 public class StudentLogIn extends JFrame implements ActionListener{
 
 	ImageIcon image = new ImageIcon("/StudentManagement/src/SPACERENT logo.png");
-	credentials Credentials = new credentials();
 	JLabel title;
 	JPanel username, password,top,mid,low, motherPanel,idPanel;
 	JButton logIn, createAccount, exit;
@@ -161,7 +159,6 @@ public class StudentLogIn extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==logIn) {
-			Credentials.setid(Integer.parseInt(idField.getText()));
 			try {
 				//get connection to data base
 				Class.forName(DRIVER);

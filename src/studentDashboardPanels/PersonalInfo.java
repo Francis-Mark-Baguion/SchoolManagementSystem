@@ -12,11 +12,11 @@ public class PersonalInfo extends JPanel {
 	String name;
 
 	dataRetrieve data;
-	credentials userinfo = new credentials();
+	
 	
 	public PersonalInfo() {
 		
-		data = new dataRetrieve(userinfo.getid());
+		data = new dataRetrieve(3);
 		
 		setBackground(Color.WHITE);
 		
@@ -34,7 +34,7 @@ public class PersonalInfo extends JPanel {
 		add(namePanel);
 		namePanel.setLayout(null);
 		
-		JLabel nameLabel = new JLabel();
+		JLabel nameLabel = new JLabel(data.getName());
 		nameLabel.setBounds(10, 0, 142, 31);
 		namePanel.add(nameLabel);
 		
@@ -46,10 +46,6 @@ public class PersonalInfo extends JPanel {
 		JLabel classLabel = new JLabel(data.getClasses());
 		classLabel.setBounds(10, 0, 142, 31);
 		classPanel.add(classLabel);
-		
-		JLabel nameLabel_2 = new JLabel();
-		nameLabel_2.setBounds(10, 0, 142, 31);
-		classPanel.add(nameLabel_2);
 		
 		JPanel coursePabel = new JPanel();
 		coursePabel.setLayout(null);
@@ -65,7 +61,7 @@ public class PersonalInfo extends JPanel {
 		emailPanel.setBounds(29, 305, 162, 31);
 		add(emailPanel);
 		
-		JLabel emailLabel = new JLabel("");
+		JLabel emailLabel = new JLabel(data.getEmail());
 		emailLabel.setBounds(10, 0, 142, 31);
 		emailPanel.add(emailLabel);
 		
@@ -74,7 +70,7 @@ public class PersonalInfo extends JPanel {
 		phonePanel.setBounds(29, 345, 162, 31);
 		add(phonePanel);
 		
-		JLabel phoneLabel = new JLabel("");
+		JLabel phoneLabel = new JLabel(data.getPhone());
 		phoneLabel.setBounds(10, 0, 142, 31);
 		phonePanel.add(phoneLabel);
 		

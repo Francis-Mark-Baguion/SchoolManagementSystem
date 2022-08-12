@@ -20,7 +20,7 @@ public class dataRetrieve {
 			String sql = "Select * from student_info where id = '"+id+"'";
 			
 			ResultSet rs = stmt.executeQuery(sql);
-			while(rs.next()) {
+			if(rs.next()) {
 				name = rs.getString("name");
 				Classes = rs.getString("class");
 				course = rs.getString("course");
