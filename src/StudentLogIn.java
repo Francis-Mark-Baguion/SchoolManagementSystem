@@ -20,6 +20,10 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import functions.PersonalDataSetter;
+import keyvalues.Credentials;
+import studentDashboardPanels.PersonalInfo;
+
 public class StudentLogIn extends JFrame implements ActionListener{
 
 	ImageIcon image = new ImageIcon("/StudentManagement/src/SPACERENT logo.png");
@@ -72,20 +76,8 @@ public class StudentLogIn extends JFrame implements ActionListener{
 		password.setBackground(Color.black);
 		password.add(passwordLabel);
 		
-		idField = new JPasswordField();
-		idField.setBounds(231,190, 150, 30);
-		idField.setBorder(null);
-		idField.setBackground(new Color(211,211,211));
-		
-		JLabel idLabel = new JLabel("ID");
-		idLabel.setForeground(Color.white);
-		idPanel = new JPanel();
-		idPanel.setBounds(380, 190, 100, 30);
-		idPanel.setBackground(Color.black);
-		idPanel.add(idLabel);
-		
 		logIn = new JButton("Log In");
-		logIn.setBounds(310, 10, 80, 30);
+		logIn.setBounds(310, 190, 80, 30);
 		logIn.setFocusable(false);
 		logIn.setBorder(null);
 		logIn.setBackground(Color.green);
@@ -124,8 +116,7 @@ public class StudentLogIn extends JFrame implements ActionListener{
 		mid.add(password);
 		mid.add(usernameField);
 		mid.add(passwordField);
-		mid.add(idField);
-		mid.add(idPanel);
+		mid.add(logIn);
 		
 		low = new JPanel();
 		low.setBounds(0, 300, 700, 200);
@@ -133,7 +124,6 @@ public class StudentLogIn extends JFrame implements ActionListener{
 		low.setOpaque(false);
 		low.add(createAccount);
 		low.add(exit);
-		low.add(logIn);
 		
 		
 		
@@ -159,6 +149,7 @@ public class StudentLogIn extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==logIn) {
+			
 			try {
 				//get connection to data base
 				Class.forName(DRIVER);
@@ -174,8 +165,8 @@ public class StudentLogIn extends JFrame implements ActionListener{
 				ResultSet rs = stmt.executeQuery(sql);
 				if(rs.next()) {
 					JOptionPane.showMessageDialog(null, "Log in Successful");
-					System.out.println("username: "+ rs.getString("username")+ "\npassword: "+ rs.getString("password")+ idField.getText());
-					
+					System.out.println("username: "+ rs.getString("username")+ "\npassword: "+ rs.getString("password"));
+					PersonalDataSetter set = new PersonalDataSetter(rs.getInt(1));
 					StudentDashboard dashboard = new StudentDashboard();
 					dashboard.main(null);
 					this.dispose();

@@ -11,9 +11,12 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.border.LineBorder;
 
+import functions.Datadeletion;
 import functions.dataRetrieve;
 import studentDashboardPanels.ClassPanel;
 import studentDashboardPanels.StudentsPanel;
@@ -25,6 +28,9 @@ import java.awt.FlowLayout;
 import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
@@ -59,6 +65,23 @@ public class StudentDashboard extends JFrame implements ActionListener{
 	 */
 	JButton btnNewButton;
 	public StudentDashboard() {
+		
+		WindowListener exitListener = new WindowAdapter() {
+
+		    @Override
+		    public void windowClosing(WindowEvent e) {
+		        int confirm = JOptionPane.showOptionDialog(
+		             null, "Are You Sure to Close Application?", 
+		             "Exit Confirmation", JOptionPane.YES_NO_OPTION, 
+		             JOptionPane.QUESTION_MESSAGE, null, null, null);
+		        if (confirm == 0) {
+		        	Datadeletion delete = new Datadeletion();
+		           System.exit(0);
+		           
+		        }
+		    }
+		};
+		this.addWindowListener(exitListener);
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setIconImage(new ImageIcon(getClass().getResource("studentLogo.png")).getImage());
@@ -280,7 +303,9 @@ public class StudentDashboard extends JFrame implements ActionListener{
 		// TODO Auto-generated method stub
 		if(e.getSource()==btnNewButton) {
 			StudentLogIn login = new StudentLogIn();
+			Datadeletion delete = new Datadeletion();
 			this.dispose();
 		}
+		
 	}
 }

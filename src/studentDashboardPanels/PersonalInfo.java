@@ -3,20 +3,24 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.JTextField;
 
+import functions.PersonalDataGetter;
 import functions.dataRetrieve;
+import keyvalues.Credentials;
 
 import javax.swing.JLabel;
 
 public class PersonalInfo extends JPanel {
 	
 	String name;
+	int id;
 
+	PersonalDataGetter personal;
 	dataRetrieve data;
 	
-	
 	public PersonalInfo() {
+		personal = new PersonalDataGetter();
 		
-		data = new dataRetrieve(3);
+		data = new dataRetrieve(personal.idgetter());
 		
 		setBackground(Color.WHITE);
 		
@@ -84,6 +88,5 @@ public class PersonalInfo extends JPanel {
 		genderPanel.add(genderLabel);
 		
 	}
-	
 	
 }
