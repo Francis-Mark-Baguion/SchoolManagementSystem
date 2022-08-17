@@ -5,6 +5,7 @@ public class Main {
 		
 		HomeFrame homeframe = new HomeFrame();
 		
+		System.out.println("merge test");
 		
 	}
 }
