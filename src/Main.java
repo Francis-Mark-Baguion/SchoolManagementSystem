@@ -7,6 +7,5 @@ public class Main {
 		
 		System.out.println("merge test again");
 		System.out.println("rebase test, from main");
-		
 	}
 }
