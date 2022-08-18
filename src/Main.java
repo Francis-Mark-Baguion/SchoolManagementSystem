@@ -7,5 +7,9 @@ public class Main {
 		
 		System.out.println("merge test again");
 		System.out.println("rebase test, from main");
+		System.out.println("conflict test again");
+		System.out.println("conflict test again");
+		System.out.println("conflict test again");
+		
 	}
 }
