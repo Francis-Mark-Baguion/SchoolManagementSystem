@@ -77,8 +77,7 @@ public class StudentDashboard extends JFrame implements ActionListener{
 		        if (confirm == 0) {
 		        	Datadeletion delete = new Datadeletion();
 		           System.exit(0);
-		           
-		        }
+		        } 
 		    }
 		};
 		this.addWindowListener(exitListener);
@@ -87,6 +86,7 @@ public class StudentDashboard extends JFrame implements ActionListener{
 		this.setIconImage(new ImageIcon(getClass().getResource("studentLogo.png")).getImage());
 		this.setSize(1200, 700);
 		this.setLocationRelativeTo(null);
+		this.setResizable(false);
 		this.setTitle("Student Dashboard");
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
