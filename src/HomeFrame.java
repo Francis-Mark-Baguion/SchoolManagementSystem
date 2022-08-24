@@ -14,13 +14,14 @@ public class HomeFrame extends JFrame implements ActionListener{
 
 	JLabel title;
 	JButton Student,Teacher;
-	JPanel top,mid,low;
+	JPanel top,mid,low, footer;
 	
 	HomeFrame(){
 		
 		title = new JLabel("Student Management System");
 		title.setHorizontalAlignment(JLabel.CENTER);
 		title.setFont(new Font("Arial",Font.BOLD,30));
+		title.setForeground(Color.white);
 		
 		Student = new JButton("Student");
 		Student.setBounds(300, 90, 100, 30);
@@ -38,20 +39,27 @@ public class HomeFrame extends JFrame implements ActionListener{
 		Teacher.setBorder(null);
 		Teacher.setForeground(Color.white);
 		
+		footer = new JPanel();
+		footer.setBounds(0,390,700,30);
+		footer.setBackground(Color.BLACK);
+		
 		top = new JPanel();
 		top.setBounds(0, 0, 700, 50);
 		top.add(title);
-		top.setBackground(Color.white);
+		top.setBackground(Color.black);
+		top.setForeground(Color.white);
 		
 		mid = new JPanel();
-		mid.setBounds(0, 50, 700, 300);
+		mid.setBounds(0, 50, 700, 450);
 		mid.setBackground(Color.white);
 		mid.setLayout(null);
 		mid.add(Student);
 		mid.add(Teacher);
+		mid.add(footer);
 		
 		this.add(top);
-		this.add(mid);  
+		this.add(mid); 
+		//this.add(footer);
 		
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setSize(700, 500);
