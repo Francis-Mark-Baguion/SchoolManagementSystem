@@ -1,10 +1,7 @@
-
 import java.awt.BorderLayout;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Insets;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -19,9 +16,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.*;
-
-import javax.swing.text.StyledEditorKit.BoldAction;
-
 
 public class TeacherLogIn extends JFrame implements ActionListener {
 

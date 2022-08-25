@@ -2,7 +2,6 @@ package studentDashboardPanels;
 import java.awt.Color;
 import java.awt.Font;
 import java.sql.*;
-
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
