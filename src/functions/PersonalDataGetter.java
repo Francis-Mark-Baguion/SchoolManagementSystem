@@ -21,11 +21,11 @@ try {
 			Class.forName(DRIVER);
 			Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 			Statement stmt = con.createStatement();
-			String sql = "Select * from idtable";
+			String sql = "SELECT * FROM idtable ORDER BY ID DESC LIMIT 1";
 			
 			ResultSet rs = stmt.executeQuery(sql);
 			if(rs.next()) {
-				id = rs.getInt(1);
+				id = rs.getInt(2);
 				
 			}
 			

@@ -26,8 +26,9 @@ public class PersonalDataSetter {
 			Class.forName(DRIVER);
 			Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 			
-			PreparedStatement ps = con.prepareStatement("insert into idtable values(?)");
-			ps.setInt(1, id); 
+			PreparedStatement ps = con.prepareStatement("insert into idtable values(?,?)");
+			ps.setInt(1, 0);
+			ps.setInt(2, id); 
 			
 			int i=ps.executeUpdate();  
 			System.out.println(i+" records affected");

@@ -1,7 +1,6 @@
 package studentDashboardPanels;
 import javax.swing.JPanel;
 import java.awt.Color;
-import javax.swing.JTextField;
 import functions.PersonalDataGetter;
 import functions.dataRetrieve;
 import javax.swing.JLabel;

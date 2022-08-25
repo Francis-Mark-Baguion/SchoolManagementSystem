@@ -1,17 +1,11 @@
 
 import java.awt.BorderLayout;
-
-
 import java.sql.*;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -22,7 +16,6 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import functions.PersonalDataSetter;
-import studentDashboardPanels.PersonalInfo;
 
 public class StudentLogIn extends JFrame implements ActionListener{
 

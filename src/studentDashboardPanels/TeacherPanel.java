@@ -1,6 +1,4 @@
 package studentDashboardPanels;
-import java.awt.Color;
-
 import javax.swing.JPanel;
 
 public class TeacherPanel extends JPanel {
