@@ -6,6 +6,9 @@ import java.awt.Font;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -45,6 +48,7 @@ public class StudentLogIn extends JFrame implements ActionListener{
 		usernameField.setBorder(null);
 		usernameField.setBackground(new Color(211,211,211));
 		usernameField.setMargin(new Insets(50,50,50,50));
+		usernameField.addKeyListener(new CustomKeyListener());
 		
 		
 		
@@ -61,6 +65,8 @@ public class StudentLogIn extends JFrame implements ActionListener{
 		passwordField.setBounds(231,140, 150, 30);
 		passwordField.setBorder(null);
 		passwordField.setBackground(new Color(211,211,211));
+		passwordField.addKeyListener(new CustomKeyListener());
+
 		
 		JLabel passwordLabel = new JLabel("Password");
 		passwordLabel.setForeground(Color.white);
@@ -123,6 +129,7 @@ public class StudentLogIn extends JFrame implements ActionListener{
 		this.add(top);
 		this.add(mid);
 		this.add(low);	
+		this.addKeyListener(new CustomKeyListener());
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setTitle("Student Portal");
 		this.setSize(700, 500);
@@ -142,7 +149,48 @@ public class StudentLogIn extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==logIn) {
+			InsertData insert = new InsertData();
 			
+		}
+		if(e.getSource()==createAccount) {
+			System.out.println("Create Account");
+		}
+		if(e.getSource()==exit) {
+			this.dispose();
+			HomeFrame home = new HomeFrame();
+		}
+		if(e.getSource()==createAccount) {
+			this.dispose();
+			StudentRegistration registration = new StudentRegistration();
+		}
+	}
+
+	class CustomKeyListener implements KeyListener{
+
+		@Override
+		public void keyTyped(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void keyPressed(KeyEvent e) {
+			// TODO Auto-generated method stub
+			if(e.getKeyCode()== KeyEvent.VK_ENTER) {
+				InsertData insert = new InsertData();
+			}
+		}
+
+		@Override
+		public void keyReleased(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
+	class InsertData {
+		
+		public InsertData() {
 			try {
 				//get connection to data base
 				Class.forName(DRIVER);
@@ -162,26 +210,16 @@ public class StudentLogIn extends JFrame implements ActionListener{
 					PersonalDataSetter set = new PersonalDataSetter(rs.getInt(1));
 					StudentDashboard dashboard = new StudentDashboard();
 					dashboard.main(null);
-					this.dispose();
+					StudentLogIn.this.dispose();
 				}
 				else {
 					JOptionPane.showMessageDialog(null, "Failed to Log in");
 					System.out.println("there might be a problem with the input username and password");
+				
 				}
 			} catch (Exception e2) {
 				// TODO: handle exception
 			}
-		}
-		if(e.getSource()==createAccount) {
-			System.out.println("Create Account");
-		}
-		if(e.getSource()==exit) {
-			this.dispose();
-			HomeFrame home = new HomeFrame();
-		}
-		if(e.getSource()==createAccount) {
-			this.dispose();
-			StudentRegistration registration = new StudentRegistration();
 		}
 	}
 }
