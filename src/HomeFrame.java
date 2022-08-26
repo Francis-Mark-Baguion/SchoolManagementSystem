@@ -7,12 +7,13 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 public class HomeFrame extends JFrame implements ActionListener{
 
-	JLabel title;
+	JLabel title, description;
 	JButton Student,Teacher;
-	JPanel top,mid,low, footer;
+	JPanel top,mid,low, footer,breakline;
 	
 	HomeFrame(){
 		
@@ -37,9 +38,18 @@ public class HomeFrame extends JFrame implements ActionListener{
 		Teacher.setBorder(null);
 		Teacher.setForeground(Color.white);
 		
+		breakline = new JPanel();
+		breakline.setBounds(0,360,700,10);
+		breakline.setBackground(Color.BLACK);
+		
+		description = new JLabel("<html>This project has been developed for the sole purpoes of managing school related function <br/> and activity,  the project project was update on 08/26/2022 with half of the function finished. </html>", SwingConstants.CENTER);
+		description.setForeground(Color.red);
+		
 		footer = new JPanel();
-		footer.setBounds(0,390,700,30);
-		footer.setBackground(Color.BLACK);
+		footer.setBounds(0,370,700,50);
+		footer.setBackground(Color.white);
+		footer.add(description);
+	
 		
 		top = new JPanel();
 		top.setBounds(0, 0, 700, 50);
@@ -53,6 +63,7 @@ public class HomeFrame extends JFrame implements ActionListener{
 		mid.setLayout(null);
 		mid.add(Student);
 		mid.add(Teacher);
+		mid.add(breakline);
 		mid.add(footer);
 		
 		this.add(top);
