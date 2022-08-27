@@ -2,6 +2,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -96,6 +98,7 @@ static final String PASSWORD = "fmbags";
 		genderField = new JTextField();
 		genderField.setColumns(10);
 		genderField.setBounds(328, 351, 160, 42);
+		genderField.addKeyListener(new CustomKeyListener());
 		add(genderField);
 		
 		btnNewButton = new JButton("Register");
@@ -202,7 +205,14 @@ static final String PASSWORD = "fmbags";
 		
 		
 		if(e.getSource()==btnNewButton) {
-			try {
+			InsertData insert = new InsertData();
+		}
+	}
+	
+	class InsertData{
+		
+		public InsertData() {
+try {
 				
 				Class.forName(DRIVER);
 				Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
@@ -224,7 +234,7 @@ static final String PASSWORD = "fmbags";
 				JOptionPane.showMessageDialog(null, "Account Registered");
 				StudentRegistration register = new StudentRegistration();
 				register.dispose();
-				this.dispose();
+				StudentInfo.this.dispose();
 				StudentLogIn log = new StudentLogIn();
 				
 				
@@ -233,6 +243,32 @@ static final String PASSWORD = "fmbags";
 			} catch (Exception e2) {
 				// TODO: handle exception
 			}
+		}
+	}
+	
+	class CustomKeyListener implements KeyListener{
+
+		@Override
+		public void keyTyped(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void keyPressed(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+			if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+				InsertData insert = new InsertData();
+			}
+			
+			
+		}
+
+		@Override
+		public void keyReleased(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
 		}
 	}
 

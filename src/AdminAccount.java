@@ -5,6 +5,8 @@ import java.awt.Font;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -131,6 +133,16 @@ public class AdminAccount extends JFrame implements ActionListener {
 			this.dispose();
 		}
 		if(e.getSource()==signIn) {
+			
+			InsertData insert = new InsertData();
+				
+			
+			}
+		}
+	
+	class InsertData{
+		
+		InsertData(){
 			try {
 				Class.forName(DRIVER);
 			
@@ -159,7 +171,7 @@ public class AdminAccount extends JFrame implements ActionListener {
 					
 					con.close();  
 					JOptionPane.showMessageDialog(null, "Account Created");
-					this.dispose();
+					AdminAccount.this.dispose();
 					
 				} catch (Exception e2) {
 					// TODO: handle exception
@@ -169,10 +181,28 @@ public class AdminAccount extends JFrame implements ActionListener {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-			
-				
-			
 			}
 		}
+	
+	class CustomKeyListener implements KeyListener{
+
+		@Override
+		public void keyTyped(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void keyPressed(KeyEvent e) {
+			// TODO Auto-generated method stub
+			InsertData insert = new InsertData();		}
+
+		@Override
+		public void keyReleased(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
 	}
 
