@@ -1,4 +1,7 @@
+
+
 import java.awt.BorderLayout;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Insets;
@@ -10,8 +13,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -40,6 +46,7 @@ public class TeacherLogIn extends JFrame implements ActionListener {
 		usernameField.setBorder(null);
 		usernameField.setBackground(new Color(211,211,211));
 		usernameField.setMargin(new Insets(50,50,50,50));
+		usernameField.addKeyListener(new CustomKeyListener());
 		
 		
 		
@@ -56,6 +63,7 @@ public class TeacherLogIn extends JFrame implements ActionListener {
 		passwordField.setBounds(231,140, 150, 30);
 		passwordField.setBorder(null);
 		passwordField.setBackground(new Color(211,211,211));
+		passwordField.addKeyListener(new CustomKeyListener());
 		
 		JLabel passwordLabel = new JLabel("Password");
 		passwordLabel.setForeground(Color.white);
@@ -138,7 +146,24 @@ public class TeacherLogIn extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==logIn) {
-			
+			InsertData insert = new InsertData();
+		}
+		if(e.getSource()==createAccount) {
+			System.out.println("creating accuont");
+		}
+		
+		if(e.getSource()==exit) {
+			this.dispose();
+			HomeFrame home = new HomeFrame();
+		}
+		if(e.getSource()==createAccount) {
+			AdminAccount accountCreation = new AdminAccount();
+		}
+	}
+	
+	class InsertData{
+		
+		public InsertData() {
 			try {
 				Class.forName(DRIVER);
 				Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
@@ -161,19 +186,29 @@ public class TeacherLogIn extends JFrame implements ActionListener {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
+		}
+	}
+	
+	class CustomKeyListener implements KeyListener{
+
+		@Override
+		public void keyTyped(KeyEvent e) {
+			// TODO Auto-generated method stub
 			
+		}
+
+		@Override
+		public void keyPressed(KeyEvent e) {
+			// TODO Auto-generated method stub
+			if(e.getKeyCode()== KeyEvent.VK_ENTER) {
+			InsertData insert = new InsertData();
+			}
+		}
+
+		@Override
+		public void keyReleased(KeyEvent e) {
+			// TODO Auto-generated method stub
 			
-		}
-		if(e.getSource()==createAccount) {
-			System.out.println("creating accuont");
-		}
-		
-		if(e.getSource()==exit) {
-			this.dispose();
-			HomeFrame home = new HomeFrame();
-		}
-		if(e.getSource()==createAccount) {
-			AdminAccount accountCreation = new AdminAccount();
 		}
 	}
 }
