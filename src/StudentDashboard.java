@@ -8,11 +8,11 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
-import studentDashboardPanels.ClassPanel;
-import studentDashboardPanels.StudentsPanel;
-import studentDashboardPanels.PersonalInfo;
-import studentDashboardPanels.SettingsPanel;
-import studentDashboardPanels.TeacherPanel;
+import studentDashboardPanels.StudentClassPanel;
+import studentDashboardPanels.StudentStudentsPanel;
+import studentDashboardPanels.StudentPersonalInfo;
+import studentDashboardPanels.StudentSettingsPanel;
+import studentDashboardPanels.StudentTeacherPanel;
 import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -188,15 +188,15 @@ public class StudentDashboard extends JFrame implements ActionListener{
 		infoPanel.setBounds(199, 52, 985, 609);
 		contentPane.add(infoPanel);
 		
-		personalInfo = new PersonalInfo();
+		personalInfo = new StudentPersonalInfo();
 		personalInfo.setBounds(0, 0, 985, 609);
-		classPanel = new ClassPanel();
+		classPanel = new StudentClassPanel();
 		classPanel.setBounds(0, 0, 985, 609);
-		coursePanel = new StudentsPanel();
+		coursePanel = new StudentStudentsPanel();
 		coursePanel.setBounds(0, 0, 985, 609);
-		teacherPanel = new TeacherPanel();
+		teacherPanel = new StudentTeacherPanel();
 		teacherPanel.setBounds(0, 0, 985, 609);
-		settingsPanel = new SettingsPanel();
+		settingsPanel = new StudentSettingsPanel();
 		settingsPanel.setBounds(0, 0, 985, 609);
 		infoPanel.setLayout(null);
 		
@@ -209,11 +209,11 @@ public class StudentDashboard extends JFrame implements ActionListener{
 		menuClicked(personalInfo);
 	}
 	
-	private PersonalInfo personalInfo;
-	private ClassPanel classPanel;
-	private StudentsPanel coursePanel;
-	private TeacherPanel teacherPanel;
-	private SettingsPanel settingsPanel;
+	private StudentPersonalInfo personalInfo;
+	private StudentClassPanel classPanel;
+	private StudentStudentsPanel coursePanel;
+	private StudentTeacherPanel teacherPanel;
+	private StudentSettingsPanel settingsPanel;
 	
 	public void menuClicked(JPanel panel) {
 		personalInfo.setVisible(false);

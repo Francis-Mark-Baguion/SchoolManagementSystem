@@ -5,14 +5,21 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import adminDashboardPanels.AdminClassPanel;
+import adminDashboardPanels.AdminMessagesPanel;
+import adminDashboardPanels.AdminPersonalInfo;
+import adminDashboardPanels.AdminSettingsPanel;
+import adminDashboardPanels.AdminStudentPanel;
+
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
-import studentDashboardPanels.ClassPanel;
-import studentDashboardPanels.StudentsPanel;
-import studentDashboardPanels.PersonalInfo;
-import studentDashboardPanels.SettingsPanel;
-import studentDashboardPanels.TeacherPanel;
+import studentDashboardPanels.StudentClassPanel;
+import studentDashboardPanels.StudentStudentsPanel;
+import studentDashboardPanels.StudentPersonalInfo;
+import studentDashboardPanels.StudentSettingsPanel;
+import studentDashboardPanels.StudentTeacherPanel;
 import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -188,15 +195,15 @@ public class AdminDashboard extends JFrame implements ActionListener{
 		infoPanel.setBounds(199, 52, 985, 609);
 		contentPane.add(infoPanel);
 		
-		personalInfo = new PersonalInfo();
+		personalInfo = new AdminPersonalInfo();
 		personalInfo.setBounds(0, 0, 985, 609);
-		classPanel = new ClassPanel();
+		classPanel = new AdminClassPanel();
 		classPanel.setBounds(0, 0, 985, 609);
-		coursePanel = new StudentsPanel();
+		coursePanel = new AdminStudentPanel();
 		coursePanel.setBounds(0, 0, 985, 609);
-		teacherPanel = new TeacherPanel();
+		teacherPanel = new AdminMessagesPanel();
 		teacherPanel.setBounds(0, 0, 985, 609);
-		settingsPanel = new SettingsPanel();
+		settingsPanel = new AdminSettingsPanel();
 		settingsPanel.setBounds(0, 0, 985, 609);
 		infoPanel.setLayout(null);
 		
@@ -209,11 +216,11 @@ public class AdminDashboard extends JFrame implements ActionListener{
 		menuClicked(personalInfo);
 	}
 	
-	private PersonalInfo personalInfo;
-	private ClassPanel classPanel;
-	private StudentsPanel coursePanel;
-	private TeacherPanel teacherPanel;
-	private SettingsPanel settingsPanel;
+	private AdminPersonalInfo personalInfo;
+	private AdminClassPanel classPanel;
+	private AdminStudentPanel coursePanel;
+	private AdminMessagesPanel teacherPanel;
+	private AdminSettingsPanel settingsPanel;
 	
 	public void menuClicked(JPanel panel) {
 		personalInfo.setVisible(false);

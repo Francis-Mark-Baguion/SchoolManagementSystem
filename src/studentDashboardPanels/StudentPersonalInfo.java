@@ -5,7 +5,7 @@ import functions.PersonalDataGetter;
 import functions.dataRetrieve;
 import javax.swing.JLabel;
 
-public class PersonalInfo extends JPanel {
+public class StudentPersonalInfo extends JPanel {
 	
 	String name;
 	int id;
@@ -13,7 +13,7 @@ public class PersonalInfo extends JPanel {
 	PersonalDataGetter personal;
 	dataRetrieve data;
 	
-	public PersonalInfo() {
+	public StudentPersonalInfo() {
 		personal = new PersonalDataGetter();
 		
 		data = new dataRetrieve(personal.idgetter());
