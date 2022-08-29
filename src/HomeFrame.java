@@ -89,7 +89,7 @@ public class HomeFrame extends JFrame implements ActionListener{
 			
 		}
 		if(e.getSource()==Teacher) {
-			TeacherLogIn teacher = new TeacherLogIn();
+			AdminLogIn teacher = new AdminLogIn();
 			this.dispose();
 		}
 	}

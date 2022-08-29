@@ -23,7 +23,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.*;
 
-public class TeacherLogIn extends JFrame implements ActionListener {
+public class AdminLogIn extends JFrame implements ActionListener {
 
 	
 	ImageIcon image = new ImageIcon("/StudentManagement/src/SPACERENT logo.png");
@@ -33,7 +33,7 @@ public class TeacherLogIn extends JFrame implements ActionListener {
 	JTextField usernameField;
 	JPasswordField passwordField;
 	
-	public TeacherLogIn(){
+	public AdminLogIn(){
 		
 		title = new JLabel("Teacher Portal");
 		title.setFont(new Font("Arial", Font.BOLD, 30));
@@ -147,6 +147,7 @@ public class TeacherLogIn extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==logIn) {
 			InsertData insert = new InsertData();
+			
 		}
 		if(e.getSource()==createAccount) {
 			System.out.println("creating accuont");
@@ -173,6 +174,9 @@ public class TeacherLogIn extends JFrame implements ActionListener {
 				if(rs.next()) {
 					JOptionPane.showMessageDialog(null, "Log in Successful");
 					System.out.println("username: "+ rs.getString("username")+ "\npassword: "+ rs.getString("password"));
+					AdminDashboard dashboard = new AdminDashboard();
+					dashboard.main(null);
+					AdminLogIn.this.dispose();
 				}
 				else {
 					JOptionPane.showMessageDialog(null, "Failed to Log in");

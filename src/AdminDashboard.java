@@ -54,7 +54,7 @@ public class AdminDashboard extends JFrame implements ActionListener{
 		this.setSize(1200, 700);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
-		this.setTitle("Student Dashboard");
+		this.setTitle("Admin Dashboard");
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -137,7 +137,7 @@ public class AdminDashboard extends JFrame implements ActionListener{
 			}
 		});
 		
-		JLabel lblNewLabel_1_3 = new JLabel("Teacher");
+		JLabel lblNewLabel_1_3 = new JLabel("Messages");
 		lblNewLabel_1_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_3.setFont(new Font("Arial", Font.BOLD, 14));
 		menu4.add(lblNewLabel_1_3);
@@ -269,7 +269,7 @@ public class AdminDashboard extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==btnNewButton) {
-			TeacherLogIn login = new TeacherLogIn();
+			AdminLogIn login = new AdminLogIn();
 			this.dispose();
 		}
 		
