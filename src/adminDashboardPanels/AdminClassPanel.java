@@ -1,4 +1,4 @@
-package studentDashboardPanels;
+package adminDashboardPanels;
 import java.awt.Color;
 import java.awt.Font;
 import java.sql.*;
@@ -7,7 +7,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class ClassPanel extends JPanel {
+public class AdminClassPanel extends JPanel {
 
 	static final String DRIVER = "com.mysql.jdbc.Driver" ;
 	static final String URL = "jdbc:mysql://localhost:3306/demo";
@@ -20,11 +20,10 @@ public class ClassPanel extends JPanel {
 	DefaultTableModel model= new DefaultTableModel();
 	
 	
-	public ClassPanel() {
+	public AdminClassPanel() {
 		row = new Object[7];
 		setLayout(null);
 		setBounds(0, 0, 985, 609);
-		
 		JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.setBounds(0, 0, 985, 609);
 		add(scrollPane);
@@ -82,3 +81,4 @@ public class ClassPanel extends JPanel {
 	}
 
 }
+

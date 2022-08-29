@@ -1,4 +1,4 @@
-package studentDashboardPanels;
+package adminDashboardPanels;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -13,7 +13,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class StudentsPanel extends JPanel implements ActionListener {
+public class AdminStudentPanel extends JPanel implements ActionListener {
 
 	/**
 	 * Create the panel.
@@ -29,7 +29,7 @@ public class StudentsPanel extends JPanel implements ActionListener {
 	DefaultTableModel model = new DefaultTableModel();
 	String [] columnName = {"Id","Name"};
 	
-	public StudentsPanel() {
+	public AdminStudentPanel() {
 		row = new Object[3];
 		setLayout(null);
 		setBounds(0, 0, 985, 609);
