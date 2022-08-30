@@ -63,7 +63,7 @@ public class StudentStudentsPanel extends JPanel implements ActionListener {
 						Class.forName(DRIVER);
 						Connection con = DriverManager.getConnection(URL,USERNAME,PASSWORD);
 						Statement st = con.createStatement();
-						String query = "select * from student_login";
+						String query = "select name,course,class from student_info";
 						ResultSet rs = st.executeQuery(query);
 						ResultSetMetaData rmsd  = rs.getMetaData();
 						
