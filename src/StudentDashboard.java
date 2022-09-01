@@ -181,8 +181,8 @@ public class StudentDashboard extends JFrame implements ActionListener{
 					menu5.setForeground(Color.white);
 					
 					personalInfo.setBackground(Color.black);
-					classPanel.setBackground(Color.black);
-					coursePanel.setBackground(Color.black);
+					classPanel.setTable(Color.black, Color.white);
+					coursePanel.setTable(Color.black, Color.white);
 					teacherPanel.setBackground(Color.black);
 					settingsPanel.setBackground(Color.black);
 					
@@ -219,8 +219,8 @@ public class StudentDashboard extends JFrame implements ActionListener{
 					menu5.setForeground(Color.black);
 					
 					personalInfo.setBackground(Color.white);
-					classPanel.setBackground(Color.white);
-					coursePanel.setBackground(Color.white);
+					coursePanel.setTable(Color.white, Color.black);
+					classPanel.setTable(Color.white, Color.black);
 					teacherPanel.setBackground(Color.white);
 					settingsPanel.setBackground(Color.white);
 					
