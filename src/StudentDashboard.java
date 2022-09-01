@@ -46,6 +46,7 @@ public class StudentDashboard extends JFrame implements ActionListener{
 	 * Create the frame.
 	 * 
 	 */
+	JButton Lightmode, Darkmode;
 	JButton btnNewButton;
 	public StudentDashboard() {
 		
@@ -160,6 +161,60 @@ public class StudentDashboard extends JFrame implements ActionListener{
 		lblNewLabel_1_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_4.setFont(new Font("Arial", Font.BOLD, 14));
 		menu5.add(lblNewLabel_1_4);
+		
+		Darkmode = new JButton("Dark Mode");
+		Darkmode.setFocusable(false);
+		Darkmode.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource()==Darkmode) {
+					menupanel.setBackground(Color.black);
+					menu1.setBackground(Color.black);
+					menu2.setBackground(Color.black);
+					menu3.setBackground(Color.black);
+					menu4.setBackground(Color.black);
+					menu5.setBackground(Color.black);
+					
+					menu1.setForeground(Color.white);
+					menu2.setForeground(Color.white);
+					menu3.setForeground(Color.white);
+					menu4.setForeground(Color.white);
+					menu5.setForeground(Color.white);
+					Lightmode.setVisible(true);
+					Darkmode.setVisible(false);
+					
+				}
+				
+			}
+		});
+		Darkmode.setBounds(59, 531, 89, 23);
+		menupanel.add(Darkmode);
+		
+		Lightmode = new JButton("Light Mode");
+		Lightmode.setFocusable(false);
+		Lightmode.setVisible(false);
+		Lightmode.setBounds(59, 531, 89, 23);
+		Lightmode.addActionListener( new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource()==Lightmode) {
+					menupanel.setBackground(Color.white);
+					
+					menu1.setBackground(Color.white);
+					menu2.setBackground(Color.white);
+					menu3.setBackground(Color.white);
+					menu4.setBackground(Color.white);
+					menu5.setBackground(Color.white);
+					
+					menu1.setForeground(Color.black);
+					menu2.setForeground(Color.black);
+					menu3.setForeground(Color.black);
+					menu4.setForeground(Color.black);
+					menu5.setForeground(Color.black);
+					Darkmode.setVisible(true);
+					Lightmode.setVisible(false);
+				}
+			}
+		});
+		menupanel.add(Lightmode);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.BLACK);
