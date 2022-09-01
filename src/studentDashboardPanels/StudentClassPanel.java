@@ -16,6 +16,7 @@ public class StudentClassPanel extends JPanel {
 	String where = "class1";
 	
 	Object[] row;
+	JScrollPane scrollPane ;
 	JTable table = new JTable();
 	DefaultTableModel model= new DefaultTableModel();
 	
@@ -25,7 +26,7 @@ public class StudentClassPanel extends JPanel {
 		setLayout(null);
 		setBounds(0, 0, 985, 609);
 		
-		JScrollPane scrollPane = new JScrollPane(table);
+		scrollPane = new JScrollPane(table);
 		scrollPane.setBounds(0, 0, 985, 609);
 		add(scrollPane);
 		
@@ -79,6 +80,17 @@ public class StudentClassPanel extends JPanel {
 		catch(Exception e){
 			System.out.println("some ting went wong");
 		}
+	}
+	public JTable getTable() {
+		return table;
+	}
+
+	public void setTable(Color color1, Color color2) {
+		this.table.setBackground(color1);
+		this.table.setForeground(color2);
+		this.table.setGridColor(color2);
+		this.table.setSelectionForeground(color1);
+		this.scrollPane.setBackground(color1);
 	}
 
 }
