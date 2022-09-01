@@ -17,6 +17,7 @@ public class AdminClassPanel extends JPanel {
 	
 	Object[] row;
 	JTable table = new JTable();
+	JScrollPane scrollPane;
 	DefaultTableModel model= new DefaultTableModel();
 	
 	
@@ -24,7 +25,7 @@ public class AdminClassPanel extends JPanel {
 		row = new Object[7];
 		setLayout(null);
 		setBounds(0, 0, 985, 609);
-		JScrollPane scrollPane = new JScrollPane(table);
+		scrollPane = new JScrollPane(table);
 		scrollPane.setBounds(0, 0, 985, 609);
 		add(scrollPane);
 		
@@ -39,7 +40,6 @@ public class AdminClassPanel extends JPanel {
 		table.setAutoCreateRowSorter(true);
 		add(scrollPane);
 		display();
-		
 	}
 	
 	private void display() {
@@ -78,6 +78,17 @@ public class AdminClassPanel extends JPanel {
 		catch(Exception e){
 			System.out.println("some ting went wong");
 		}
+	}
+	public JTable getTable() {
+		return table;
+	}
+
+	public void setTable(Color color1, Color color2) {
+		this.table.setBackground(color1);
+		this.table.setForeground(color2);
+		this.table.setGridColor(color2);
+		this.table.setSelectionForeground(color1);
+		this.scrollPane.setBackground(color1);
 	}
 
 }

@@ -141,7 +141,7 @@ public class AdminDashboard extends JFrame implements ActionListener{
 		menu4.addMouseListener(new PaneButtonMouseAdapter(menu4) {
 			@Override
 			public void mousePressed (MouseEvent e) {
-				menuClicked(teacherPanel);
+				menuClicked(messagesPanel);
 			}
 		});
 		
@@ -172,7 +172,7 @@ public class AdminDashboard extends JFrame implements ActionListener{
 		Darkmode = new JButton("Dark Mode");
 		Darkmode.setFocusable(false);
 		Darkmode.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed (ActionEvent e) {
 				if(e.getSource()==Darkmode) {
 					menupanel.setBackground(Color.black);
 					menu1.setBackground(Color.black);
@@ -186,6 +186,13 @@ public class AdminDashboard extends JFrame implements ActionListener{
 					menu3.setForeground(Color.white);
 					menu4.setForeground(Color.white);
 					menu5.setForeground(Color.white);
+					
+					personalInfo.setBackground(Color.black);
+					classPanel.setTable(Color.black, Color.white);
+					coursePanel.setBackground(Color.black);
+					messagesPanel.setBackground(Color.black);
+					settingsPanel.setBackground(Color.black);
+					
 					Lightmode.setVisible(true);
 					Darkmode.setVisible(false);
 					
@@ -216,6 +223,14 @@ public class AdminDashboard extends JFrame implements ActionListener{
 					menu3.setForeground(Color.black);
 					menu4.setForeground(Color.black);
 					menu5.setForeground(Color.black);
+					
+					personalInfo.setBackground(Color.white);
+					classPanel.setBackground(Color.white);
+					coursePanel.setBackground(Color.white);
+					messagesPanel.setBackground(Color.white);
+					settingsPanel.setBackground(Color.white);
+					
+					classPanel.setTable(Color.white, Color.black);
 					Darkmode.setVisible(true);
 					Lightmode.setVisible(false);
 				}
@@ -256,8 +271,8 @@ public class AdminDashboard extends JFrame implements ActionListener{
 		classPanel.setBounds(0, 0, 985, 609);
 		coursePanel = new AdminStudentPanel();
 		coursePanel.setBounds(0, 0, 985, 609);
-		teacherPanel = new AdminMessagesPanel();
-		teacherPanel.setBounds(0, 0, 985, 609);
+		messagesPanel = new AdminMessagesPanel();
+		messagesPanel.setBounds(0, 0, 985, 609);
 		settingsPanel = new AdminSettingsPanel();
 		settingsPanel.setBounds(0, 0, 985, 609);
 		infoPanel.setLayout(null);
@@ -265,7 +280,7 @@ public class AdminDashboard extends JFrame implements ActionListener{
 		infoPanel.add(personalInfo);
 		infoPanel.add(classPanel);
 		infoPanel.add(coursePanel);
-		infoPanel.add(teacherPanel);
+		infoPanel.add(messagesPanel);
 		infoPanel.add(settingsPanel);
 		
 		menuClicked(personalInfo);
@@ -274,14 +289,14 @@ public class AdminDashboard extends JFrame implements ActionListener{
 	private AdminPersonalInfo personalInfo;
 	private AdminClassPanel classPanel;
 	private AdminStudentPanel coursePanel;
-	private AdminMessagesPanel teacherPanel;
+	private AdminMessagesPanel messagesPanel;
 	private AdminSettingsPanel settingsPanel;
 	
 	public void menuClicked(JPanel panel) {
 		personalInfo.setVisible(false);
 		classPanel.setVisible(false);
 		coursePanel.setVisible(false);
-		teacherPanel.setVisible(false);
+		messagesPanel.setVisible(false);
 		settingsPanel.setVisible(false);
 		
 		panel.setVisible(true);
