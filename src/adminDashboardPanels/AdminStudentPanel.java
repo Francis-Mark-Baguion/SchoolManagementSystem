@@ -25,6 +25,7 @@ public class AdminStudentPanel extends JPanel implements ActionListener {
 	static final String PASSWORD = "fmbags";
 	
 	Object[] row;
+	JScrollPane scrollPane;
 	JTable table = new JTable();
 	DefaultTableModel model = new DefaultTableModel();
 	String [] columnName = {"Id","Name"};
@@ -35,7 +36,7 @@ public class AdminStudentPanel extends JPanel implements ActionListener {
 		setBounds(0, 0, 985, 609);
 		setBackground(Color.green);
 		
-		JScrollPane scrollPane = new JScrollPane(table);
+		scrollPane = new JScrollPane(table);
 		scrollPane.setBounds(0, 0, 985, 609);
 		add(scrollPane);
 		
@@ -96,5 +97,17 @@ public class AdminStudentPanel extends JPanel implements ActionListener {
 						System.out.println("some ting went wong");
 					}
 				
+	}
+	
+	public JTable getTable() {
+		return table;
+	}
+
+	public void setTable(Color color1, Color color2) {
+		this.table.setBackground(color1);
+		this.table.setForeground(color2);
+		this.table.setGridColor(color2);
+		this.table.setSelectionForeground(color1);
+		this.scrollPane.setBackground(color1);
 	}
 }

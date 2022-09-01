@@ -189,7 +189,7 @@ public class AdminDashboard extends JFrame implements ActionListener{
 					
 					personalInfo.setBackground(Color.black);
 					classPanel.setTable(Color.black, Color.white);
-					coursePanel.setBackground(Color.black);
+					coursePanel.setTable(Color.black, Color.white);
 					messagesPanel.setBackground(Color.black);
 					settingsPanel.setBackground(Color.black);
 					
@@ -225,11 +225,9 @@ public class AdminDashboard extends JFrame implements ActionListener{
 					menu5.setForeground(Color.black);
 					
 					personalInfo.setBackground(Color.white);
-					classPanel.setBackground(Color.white);
-					coursePanel.setBackground(Color.white);
 					messagesPanel.setBackground(Color.white);
 					settingsPanel.setBackground(Color.white);
-					
+					coursePanel.setTable(Color.white, Color.black);
 					classPanel.setTable(Color.white, Color.black);
 					Darkmode.setVisible(true);
 					Lightmode.setVisible(false);
