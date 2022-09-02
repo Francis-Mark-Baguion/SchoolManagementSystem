@@ -18,7 +18,7 @@ import java.awt.Font;
 import studentDashboardPanels.StudentClassPanel;
 import studentDashboardPanels.StudentStudentsPanel;
 import studentDashboardPanels.StudentPersonalInfo;
-import studentDashboardPanels.StudentSettingsPanel;
+import studentDashboardPanels.StudentMessagesPanel;
 import studentDashboardPanels.StudentTeacherPanel;
 import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;

@@ -1,12 +1,12 @@
 package studentDashboardPanels;
 import javax.swing.JPanel;
 
-public class StudentSettingsPanel extends JPanel {
+public class StudentMessagesPanel extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public StudentSettingsPanel() {
+	public StudentMessagesPanel() {
 		setBounds(0, 0, 985, 609);
 		
 	}
