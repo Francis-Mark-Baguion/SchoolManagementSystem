@@ -14,6 +14,9 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import functions.PersonalDataSetter;
+import functions2.AdminPersonalDataSetter;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -174,6 +177,7 @@ public class AdminLogIn extends JFrame implements ActionListener {
 				if(rs.next()) {
 					JOptionPane.showMessageDialog(null, "Log in Successful");
 					System.out.println("username: "+ rs.getString("username")+ "\npassword: "+ rs.getString("password"));
+					AdminPersonalDataSetter set = new AdminPersonalDataSetter(rs.getInt(1));
 					AdminDashboard dashboard = new AdminDashboard();
 					dashboard.main(null);
 					AdminLogIn.this.dispose();

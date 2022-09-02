@@ -140,10 +140,11 @@ try {
 				Class.forName(DRIVER);
 				Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 				
-				PreparedStatement ps = con.prepareStatement("insert into teacher_info values(?,?,?)");
+				PreparedStatement ps = con.prepareStatement("insert into teacher_info values(?,?,?,?)");
 				ps.setInt(1, 0);
 				ps.setString(2,nameField.getText());  
-				ps.setString(3, classField.getText());  
+				ps.setString(3, classField.getText()); 
+				ps.setString(4, "");  
 				
 				
 				int i=ps.executeUpdate();  
@@ -155,7 +156,6 @@ try {
 				StudentRegistration register = new StudentRegistration();
 				register.dispose();
 				AdminInfo.this.dispose();
-				AdminLogIn log = new AdminLogIn();
 				
 				
 				
