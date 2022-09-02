@@ -11,7 +11,7 @@ import java.awt.Font;
 import studentDashboardPanels.StudentClassPanel;
 import studentDashboardPanels.StudentStudentsPanel;
 import studentDashboardPanels.StudentPersonalInfo;
-import studentDashboardPanels.StudentSettingsPanel;
+import studentDashboardPanels.StudentMessagesPanel;
 import studentDashboardPanels.StudentTeacherPanel;
 import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
@@ -156,7 +156,7 @@ public class StudentDashboard extends JFrame implements ActionListener{
 			}
 		});
 		
-		JLabel lblNewLabel_1_4 = new JLabel("Settings");
+		JLabel lblNewLabel_1_4 = new JLabel("Messages");
 		lblNewLabel_1_4.setBackground(SystemColor.controlHighlight);
 		lblNewLabel_1_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_4.setFont(new Font("Arial", Font.BOLD, 14));
@@ -266,7 +266,7 @@ public class StudentDashboard extends JFrame implements ActionListener{
 		coursePanel.setBounds(0, 0, 985, 609);
 		teacherPanel = new StudentTeacherPanel();
 		teacherPanel.setBounds(0, 0, 985, 609);
-		settingsPanel = new StudentSettingsPanel();
+		settingsPanel = new StudentMessagesPanel();
 		settingsPanel.setBounds(0, 0, 985, 609);
 		infoPanel.setLayout(null);
 		
@@ -283,7 +283,7 @@ public class StudentDashboard extends JFrame implements ActionListener{
 	private StudentClassPanel classPanel;
 	private StudentStudentsPanel coursePanel;
 	private StudentTeacherPanel teacherPanel;
-	private StudentSettingsPanel settingsPanel;
+	private StudentMessagesPanel settingsPanel;
 	
 	public void menuClicked(JPanel panel) {
 		personalInfo.setVisible(false);
