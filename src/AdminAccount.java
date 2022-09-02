@@ -171,6 +171,7 @@ public class AdminAccount extends JFrame implements ActionListener {
 					
 					con.close();  
 					JOptionPane.showMessageDialog(null, "Account Created");
+					AdminInfo info = new AdminInfo();
 					AdminAccount.this.dispose();
 					
 				} catch (Exception e2) {
