@@ -1,8 +1,10 @@
 package adminDashboardPanels;
 import javax.swing.JPanel;
+
 import java.awt.Color;
-import functions.PersonalDataGetter;
-import functions.dataRetrieve;
+import functions2.AdminDataRetrive;
+import functions2.AdminPersonalDataGetter;
+
 import javax.swing.JLabel;
 
 public class AdminPersonalInfo extends JPanel {
@@ -10,13 +12,13 @@ public class AdminPersonalInfo extends JPanel {
 	String name;
 	int id;
 
-	PersonalDataGetter personal;
-	dataRetrieve data;
+	AdminPersonalDataGetter personal;
+	AdminDataRetrive data;
 	
 	public AdminPersonalInfo () {
-		personal = new PersonalDataGetter();
+		personal = new AdminPersonalDataGetter();
 		
-		data = new dataRetrieve(personal.idgetter());
+		data = new AdminDataRetrive(personal.idgetter());
 		
 		setBackground(Color.WHITE);
 		
@@ -47,41 +49,7 @@ public class AdminPersonalInfo extends JPanel {
 		classLabel.setBounds(10, 0, 142, 31);
 		classPanel.add(classLabel);
 		
-		JPanel coursePabel = new JPanel();
-		coursePabel.setLayout(null);
-		coursePabel.setBounds(29, 263, 162, 31);
-		add(coursePabel);
 		
-		JLabel courseLabel = new JLabel(data.getCourse());
-		courseLabel.setBounds(10, 0, 142, 31);
-		coursePabel.add(courseLabel);
-		
-		JPanel emailPanel = new JPanel();
-		emailPanel.setLayout(null);
-		emailPanel.setBounds(29, 305, 162, 31);
-		add(emailPanel);
-		
-		JLabel emailLabel = new JLabel(data.getEmail());
-		emailLabel.setBounds(10, 0, 142, 31);
-		emailPanel.add(emailLabel);
-		
-		JPanel phonePanel = new JPanel();
-		phonePanel.setLayout(null);
-		phonePanel.setBounds(29, 345, 162, 31);
-		add(phonePanel);
-		
-		JLabel phoneLabel = new JLabel(data.getPhone());
-		phoneLabel.setBounds(10, 0, 142, 31);
-		phonePanel.add(phoneLabel);
-		
-		JPanel genderPanel = new JPanel();
-		genderPanel.setLayout(null);
-		genderPanel.setBounds(29, 387, 162, 31);
-		add(genderPanel);
-		
-		JLabel genderLabel = new JLabel(data.getGender());
-		genderLabel.setBounds(10, 0, 142, 31);
-		genderPanel.add(genderLabel);
 		
 	}
 	
