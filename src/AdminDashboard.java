@@ -5,21 +5,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import adminDashboardPanels.AdminClassPanel;
 import adminDashboardPanels.AdminMessagesPanel;
 import adminDashboardPanels.AdminPersonalInfo;
 import adminDashboardPanels.AdminSettingsPanel;
 import adminDashboardPanels.AdminStudentPanel;
-
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
-import studentDashboardPanels.StudentClassPanel;
-import studentDashboardPanels.StudentStudentsPanel;
-import studentDashboardPanels.StudentPersonalInfo;
-import studentDashboardPanels.StudentMessagesPanel;
-import studentDashboardPanels.StudentTeacherPanel;
 import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
