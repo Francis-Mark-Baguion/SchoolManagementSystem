@@ -1,6 +1,5 @@
 package adminDashboardPanels;
 import javax.swing.JPanel;
-
 import java.awt.Color;
 import functions2.AdminDataRetrive;
 import functions2.AdminPersonalDataGetter;
