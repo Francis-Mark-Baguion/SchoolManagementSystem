@@ -4,6 +4,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,6 +12,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
@@ -41,6 +43,7 @@ public class StudentMessagesPanel extends JPanel implements ActionListener {
 		message.setBounds(62, 123, 271, 271);
 		message.setLineWrap(true);
 		message.setWrapStyleWord(true);
+		message.setBorder(BorderFactory.createLineBorder(Color.black));
 		add(message);
 		
 		sendbutton = new JButton("Send");
