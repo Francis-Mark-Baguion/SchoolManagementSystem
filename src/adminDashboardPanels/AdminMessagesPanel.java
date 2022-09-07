@@ -8,7 +8,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
-
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -62,7 +61,6 @@ public class AdminMessagesPanel extends JPanel implements ActionListener {
 	private void display() {
 		model.setRowCount(0);
 		try {
-						System.out.println("hello");
 						Class.forName(DRIVER);
 						Connection con = DriverManager.getConnection(URL,USERNAME,PASSWORD);
 						Statement st = con.createStatement();

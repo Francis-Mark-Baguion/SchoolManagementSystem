@@ -24,7 +24,6 @@ static final String DRIVER = "com.mysql.jdbc.Driver" ;
 static final String URL = "jdbc:mysql://localhost:3306/demo";
 static final String USERNAME = "root";
 static final String PASSWORD = "fmbags";
-	private JPanel contentPane;
 	private JTextField nameField;
 	private JTextField classField;
 	private JTextField courseField;
@@ -205,7 +204,7 @@ static final String PASSWORD = "fmbags";
 		
 		
 		if(e.getSource()==btnNewButton) {
-			InsertData insert = new InsertData();
+			new InsertData();
 		}
 	}
 	
@@ -235,7 +234,7 @@ try {
 				StudentRegistration register = new StudentRegistration();
 				register.dispose();
 				StudentInfo.this.dispose();
-				StudentLogIn log = new StudentLogIn();
+				new StudentLogIn();
 				
 				
 				
@@ -259,7 +258,7 @@ try {
 			// TODO Auto-generated method stub
 			
 			if(e.getKeyCode() == KeyEvent.VK_ENTER) {
-				InsertData insert = new InsertData();
+				new InsertData();
 			}
 			
 			
