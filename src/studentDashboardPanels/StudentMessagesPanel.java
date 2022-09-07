@@ -15,6 +15,7 @@ import java.sql.PreparedStatement;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JLabel;
 
 public class StudentMessagesPanel extends JPanel implements ActionListener {
 	private JTextField teachersname;
@@ -33,23 +34,27 @@ public class StudentMessagesPanel extends JPanel implements ActionListener {
 		setLayout(null);
 		
 		teachersname = new JTextField();
-		teachersname.setBounds(57, 58, 156, 20);
+		teachersname.setBounds(89, 38, 156, 20);
 		add(teachersname);
 		teachersname.setColumns(10);
 		
 		
 		
 		message = new JTextArea();
-		message.setBounds(62, 123, 271, 271);
+		message.setBounds(62, 123, 353, 423);
 		message.setLineWrap(true);
 		message.setWrapStyleWord(true);
 		message.setBorder(BorderFactory.createLineBorder(Color.black));
 		add(message);
 		
 		sendbutton = new JButton("Send");
-		sendbutton.setBounds(137, 443, 89, 23);
+		sendbutton.setBounds(326, 575, 89, 23);
 		add(sendbutton);
 		sendbutton.addActionListener(this);
+		
+		JLabel lblNewLabel = new JLabel("To");
+		lblNewLabel.setBounds(62, 41, 46, 14);
+		add(lblNewLabel);
 		
 	}
 	@Override
