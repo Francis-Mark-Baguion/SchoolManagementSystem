@@ -3,6 +3,8 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import functions.PersonalDataGetter;
 import functions.dataRetrieve;
+
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 
 public class StudentPersonalInfo extends JPanel {
@@ -24,9 +26,10 @@ public class StudentPersonalInfo extends JPanel {
 		setLayout(null);
 		
 		JPanel PorfilePicPanel = new JPanel();
-		PorfilePicPanel.setBackground(Color.BLACK);
+		PorfilePicPanel.setBackground(Color.WHITE);
 		PorfilePicPanel.setForeground(Color.BLACK);
 		PorfilePicPanel.setBounds(29, 11, 162, 152);
+		PorfilePicPanel.setBorder(BorderFactory.createLineBorder(Color.black));
 		add(PorfilePicPanel);
 		
 		JPanel namePanel = new JPanel();
