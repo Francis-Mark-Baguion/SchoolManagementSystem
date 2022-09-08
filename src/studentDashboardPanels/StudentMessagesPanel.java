@@ -16,6 +16,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JLabel;
+import java.awt.Font;
 
 public class StudentMessagesPanel extends JPanel implements ActionListener {
 	private JTextField teachersname;
@@ -41,18 +42,20 @@ public class StudentMessagesPanel extends JPanel implements ActionListener {
 		
 		
 		message = new JTextArea();
-		message.setBounds(62, 123, 353, 423);
+		message.setBounds(62, 123, 447, 423);
 		message.setLineWrap(true);
 		message.setWrapStyleWord(true);
 		message.setBorder(BorderFactory.createLineBorder(Color.black));
 		add(message);
 		
 		sendbutton = new JButton("Send");
-		sendbutton.setBounds(326, 575, 89, 23);
+		sendbutton.setFont(new Font("SimSun", Font.BOLD, 16));
+		sendbutton.setBounds(415, 557, 104, 41);
 		add(sendbutton);
 		sendbutton.addActionListener(this);
 		
 		JLabel lblNewLabel = new JLabel("To");
+		lblNewLabel.setFont(new Font("SimSun", Font.BOLD, 16));
 		lblNewLabel.setBounds(62, 41, 46, 14);
 		add(lblNewLabel);
 		
