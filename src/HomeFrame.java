@@ -42,7 +42,7 @@ public class HomeFrame extends JFrame implements ActionListener{
 		breakline.setBounds(0,360,700,10);
 		breakline.setBackground(Color.BLACK);
 		
-		description = new JLabel("<html>This project has been developed for the sole purpoes of managing school related function <br/> and activity,  the project project was updated on 08/26/2022 with half of the function finished. </html>", SwingConstants.CENTER);
+		description = new JLabel("<html>This project project was updated on 08/26/2022. </html>", SwingConstants.CENTER);
 		description.setForeground(Color.red);
 		
 		footer = new JPanel();
