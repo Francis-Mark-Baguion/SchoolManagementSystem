@@ -68,7 +68,6 @@ public class HomeFrame extends JFrame implements ActionListener{
 		
 		this.add(top);
 		this.add(mid); 
-		//this.add(footer);
 		
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setSize(700, 500);
