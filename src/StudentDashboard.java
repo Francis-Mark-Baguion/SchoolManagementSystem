@@ -193,7 +193,7 @@ public class StudentDashboard extends JFrame implements ActionListener{
 				
 			}
 		});
-		Darkmode.setBounds(59, 531, 89, 23);
+		Darkmode.setBounds(22, 531, 126, 23);
 		menupanel.add(Darkmode);
 		
 		Lightmode = new JButton("Light Mode");
