@@ -193,13 +193,13 @@ public class AdminDashboard extends JFrame implements ActionListener{
 				
 			}
 		});
-		Darkmode.setBounds(59, 531, 89, 23);
+		Darkmode.setBounds(22, 531, 126, 23);
 		menupanel.add(Darkmode);
 		
 		Lightmode = new JButton("Light Mode");
 		Lightmode.setFocusable(false);
 		Lightmode.setVisible(false);
-		Lightmode.setBounds(59, 531, 89, 23);
+		Lightmode.setBounds(22, 531, 126, 23);
 		Lightmode.addActionListener( new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource()==Lightmode) {
